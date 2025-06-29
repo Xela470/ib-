@@ -14,7 +14,9 @@ n_rows, df = Query().select(
 ).where(    
     Column('Perf.6M') > 100, 
     Column('average_volume_90d_calc') > 500000, 
-    Column('close') >= 1,
+    Column('close') >= 3,
+    Column('close') >= 'SMA50',
+    Column('close') >= 'SMA200',
     Column('exchange') != 'OTC'
 ).order_by('Perf.6M', ascending=False).get_scanner_data()
 
@@ -23,7 +25,7 @@ df['adr_%'] = df['ADR'] / df['close']*100
 
 # Appliquer tous les filtres en une seule étape
 df_final = df[
-    (df['adr_%'] >= 7)
+    (df['adr_%'] >= 2.5)
 ].copy()
 
 
