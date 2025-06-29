@@ -13,8 +13,9 @@ n_rows, df = Query().select(
     'average_volume_60d_calc','ADR','SMA50','SMA200'
 ).where(
     Column('Perf.W') > 25, 
-    Column('close') >= 5,
+    Column('close') >= 3,
     Column('exchange') != 'OTC'
+    
 ).order_by('Perf.W', ascending=False).get_scanner_data()
 
 # Ajouter la nouvelle colonne 'close_times_volume'
