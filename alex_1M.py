@@ -12,10 +12,11 @@ n_rows, df = Query().select(
     'name','exchange','close','volume','Perf.3M','average_volume_90d_calc',
     'average_volume_60d_calc','ADR','SMA50','SMA200'
 ).where(    
-    Column('Perf.1M') > 50, 
+    Column('Perf.1M') > 30, 
     Column('average_volume_60d_calc') > 500000, 
-    Column('close') >= 1,
+    Column('close') >= 5,
     Column('close') >= 'SMA50',
+    Column('close') >= 'SMA200',
     Column('exchange') != 'OTC'
 ).order_by('Perf.1M', ascending=False).get_scanner_data()
 
