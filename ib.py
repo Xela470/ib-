@@ -10,7 +10,7 @@ from collections import OrderedDict
 token = '125734676551632065614931'
 query_id = '1141754'
 
-webhook_url = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjYwNTZlMDYzZTA0MzM1MjY1NTUzMTUxM2Ii_pc'
+webhook_url = 'https://xela47.app.n8n.cloud/webhook-test/4367e10f-7314-47da-85e3-c16a9b9fcdc1'
 
 try:
     response = client.download(token, query_id)
