@@ -1,10 +1,6 @@
 from ibflex import client
 import xml.etree.ElementTree as ET
 import requests
-from notion_client import Client
-import os
-import json
-from collections import OrderedDict
 
 
 token = '125734676551632065614931'
