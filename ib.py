@@ -10,6 +10,7 @@ from collections import OrderedDict
 token = '125734676551632065614931'
 query_id = '1141754'
 
+webhook_url = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjYwNTZlMDYzZTA0MzM1MjY1NTUzMTUxM2Ii_pc'
 
 try:
     response = client.download(token, query_id)
@@ -29,6 +30,11 @@ try:
     }
 
     print("Données extraites:", data_dict)
+    print("URL du webhook:", webhook_url)
+
+    pabbly_response = requests.post(webhook_url, json=data_dict)
+    print("Statut de la réponse Pabbly:", pabbly_response.status_code)
+    print("Contenu de la réponse Pabbly:", pabbly_response.text)
 
 except Exception as e:
     print("Une erreur s'est produite:", str(e))
