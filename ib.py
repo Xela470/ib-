@@ -6,7 +6,7 @@ import requests
 token = '125734676551632065614931'
 query_id = '1141754'
 
-webhook_url = 'https://xela47.app.n8n.cloud/webhook-test/4367e10f-'
+webhook_url = 'https://xela47.app.n8n.cloud/webhook-test/4367e10f-7314-47da-85e3-c16a9b9fcdc1'
 
 try:
     response = client.download(token, query_id)
